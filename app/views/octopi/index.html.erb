@@ -1,0 +1,10 @@
+<h1>Look at all these Octopi!</h1>
+
+<% @octopi.each_with_index do |octopus, index|%>
+<p>
+<label><%= "#{index + 1}."%></label>
+<%= link_to octopus.name, octopus_path(octopus) %><br>
+<%= button_to 'Edit This Octopus', edit_octopus_path(octopus), :method => "get" %><br>
+<%= button_to 'Delete This Octopus', octopus_path(octopus), :method => "delete" %>
+</p>
+<% end %>
